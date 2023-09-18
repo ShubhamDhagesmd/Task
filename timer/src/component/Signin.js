@@ -5,6 +5,7 @@ import SignUp from "./SignUp";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import '../App.css';
 
 
 const SignIn = () => {
@@ -54,10 +55,8 @@ const signIn = (e) => {
             </span>
           </div>
           {signup ? (
-            // Display the Sign Up section when showSignUp is true
             <SignUp />
           ) : (
-            // Display the Login form when showSignUp is false
             <form onSubmit={signIn}>
               <div className="mb-4">
                 <div className="relative">
@@ -106,16 +105,25 @@ const signIn = (e) => {
               {signup ? (
                 <>
                   Already have an account?{" "}
-                  <button onClick={handleSignInClick}>Sign In</button>
+                  <button
+                    onClick={handleSignInClick}
+                    className="text-blue-500 hover:text-blue-700"
+                  >
+                    Sign In
+                  </button>
                 </>
               ) : (
                 <>
                   Don't have an account?{" "}
-                  <button onClick={handleSignUpClick}>Sign Up</button>
+                  <button
+                    onClick={handleSignUpClick}
+                    className="text-blue-500 hover:text-blue-700"
+                  >
+                    Sign Up
+                  </button>
                 </>
               )}
             </div>
-            {/* <a href="#">Forgot your password?</a> */}
           </div>
         </div>
       </div>
