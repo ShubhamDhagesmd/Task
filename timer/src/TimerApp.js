@@ -39,15 +39,39 @@ function TimerApp() {
   };
 
   return (
-    <div>
-      <h1>Pomodoro Timer</h1>
-      <div>
-        <h2>Work Timer: {Math.floor(workTime / 60)}:{(workTime % 60).toString().padStart(2, '0')}</h2>
-        <h2>Break Timer: {Math.floor(breakTime / 60)}:{(breakTime % 60).toString().padStart(2, '0')}</h2>
-        <button onClick={toggleTimer}>{isActive ? 'Pause' : 'Start'}</button>
-        <button onClick={resetTimer}>Reset</button>
-      </div>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-white">
+  <h1 class="text-4xl font-semibold mb-6">Pomodoro Timer</h1>
+  <div class="flex items-center space-x-4">
+    <div class="text-center">
+      <h2 class="text-2xl font-semibold">Work Timer</h2>
+      <p class="text-3xl font-bold">
+        {Math.floor(workTime / 60)}:{(workTime % 60).toString().padStart(2, '0')}
+      </p>
     </div>
+    <div class="text-center">
+      <h2 class="text-2xl font-semibold">Break Timer</h2>
+      <p class="text-3xl font-bold">
+        {Math.floor(breakTime / 60)}:{(breakTime % 60).toString().padStart(2, '0')}
+      </p>
+    </div>
+  </div>
+  <div class="mt-6 flex justify-center space-x-4">
+    <button
+      class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold focus:outline-none"
+      onClick={toggleTimer}
+    >
+      {isActive ? 'Pause' : 'Start'}
+    </button>
+    <button
+      class="bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-lg font-semibold focus:outline-none"
+      onClick={resetTimer}
+    >
+      Reset
+    </button>
+  </div>
+</div>
+
+
   );
 }
 

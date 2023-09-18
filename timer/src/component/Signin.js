@@ -43,17 +43,6 @@ const signIn = (e) => {
           <h3 className="text-2xl font-semibold text-center mb-4">
             {signup ? "Sign Up" : "Sign In"}
           </h3>
-          <div className="flex justify-end space-x-2 mb-4">
-            <span className="text-blue-600">
-              <i className="fab fa-facebook-square"></i>
-            </span>
-            <span className="text-red-600">
-              <i className="fab fa-google-plus-square"></i>
-            </span>
-            <span className="text-blue-400">
-              <i className="fab fa-twitter-square"></i>
-            </span>
-          </div>
           {signup ? (
             <SignUp />
           ) : (
